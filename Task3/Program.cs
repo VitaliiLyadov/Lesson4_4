@@ -4,8 +4,8 @@
 
 int[] CreateArray()
 {
-    int[] res = new int[8];
-    for (int i = 0; i < res.Length; i++)
+    int res = 0;
+    for (int i = 0; i < 8; i++)
     {
         res[i] = new Random().Next(0, 2);
     }
@@ -19,18 +19,25 @@ void PrintArray(int[] array)
     }
     System.Console.WriteLine();
 }
-int Count(int[] array)
+int Count(int[] array, int num)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] == 1)
+        if (array[i] == num)
         {
             count++;
         }
     }
     return count;
 }
+int ReadInt(string message)
+{
+    Console.Write($"{message} > ");
+    int value = Convert.ToInt32(Console.ReadLine());
+    return value;
+}
+int value = ReadInt("Введите число");
 int[] massive = CreateArray();
-System.Console.WriteLine($"колличество единиц равно {Count(massive)}");
-PrintArray(massive);
+System.Console.WriteLine($"колличество {value} равно {Count(massive, value)}");
+int[] massive = CreateArray();
