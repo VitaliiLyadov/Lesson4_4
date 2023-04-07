@@ -5,10 +5,10 @@
 
 int[] CreateArray(int cool, int min, int max)
 {
-    int res = 0;
+    int[] res = new int[cool];
     for (int i = 0; i < cool; i++)
     {
-        res[i] = new Random().Next(min, max);
+        res[i] = new Random().Next(min, max + 1);
     }
     return res;
 }
